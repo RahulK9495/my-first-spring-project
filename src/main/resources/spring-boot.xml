@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!-- bean definitions here -->
+
+	<bean class="com.modules.Employee">
+		<!-- 		<property name="id" value="2" />
+		<property name="name" value="Ram" />
+		<property name="address" value="Pune" />  -->
+
+		<constructor-arg index="0" type="int" value="123" />
+		<constructor-arg index="1" type="java.lang.String" value="Rahul" />
+		<constructor-arg index="2" type="java.lang.String" value="Mumbai" />
+	</bean>
+
+
+	<bean class="com.modules.Car">
+		<property name="id" value="1" />
+		<property name="name" value="Maruti" />
+		<property name="parts">
+			<list>
+				<value>Bumber</value>
+				<value>Mirror</value>
+				<value>Tyre</value>
+			</list>
+		</property>
+		<property name="components">
+			<set>
+				<value>Bulb</value>
+				<value>Light</value>
+				<value>lamp</value>
+			</set>
+		</property>
+		<property name="BOM">
+			<map>
+				<entry key="11" value="seats"/>
+				<entry key="12" value="efgefseats"/>
+				<entry key="13" value="seawes"/>
+			</map>
+		</property>
+	</bean>
+	<bean id="addr1" class="com.modules.Address">
+		<property name="pin" value="101021" />
+		<property name="place" value="Pune" />
+	</bean>
+	<bean id="addr2" class="com.modules.Address">
+		<property name="pin" value="104434" />
+		<property name="place" value="Mumbai" />
+	</bean>
+	
+
+	<bean class="com.modules.Student">
+		<property name="roll" value="10" />
+		<property name="name" value="Rahul" />
+		<property name="addresses">
+			<list>
+				<ref bean="addr1"/>
+				<ref bean="addr2"/>
+			</list>
+		</property>
+	</bean>
+
+</beans>
